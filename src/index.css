@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-exit: cubic-bezier(0.7, 0, 0.84, 0);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #0E0F0F;
+  color: #F4F1EA;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-serif-editorial {
+  font-family: var(--font-serif);
+}
+
+.font-sans-ui {
+  font-family: var(--font-sans);
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0E0F0F;
+}
+::-webkit-scrollbar-thumb {
+  background: #242525;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A880;
+}
+
+/* Restrained luxury backdrop blur */
+.glass-panel {
+  background: rgba(18, 19, 20, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(244, 241, 234, 0.07);
+}
+
+.glass-panel-subtle {
+  background: rgba(22, 23, 24, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(244, 241, 234, 0.05);
+}
+
+.architectural-border {
+  border-color: rgba(244, 241, 234, 0.08);
+}
+
+/* Mask image utilities */
+.mask-radial {
+  mask-image: radial-gradient(circle, black 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle, black 60%, transparent 100%);
+}
+
+/* Prevent text selection during 3D drags */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+}

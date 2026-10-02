@@ -1,0 +1,6 @@
+{
+  "name": "Atelier Estates | Luxury 3D Real Estate",
+  "description": "An immersive digital showroom and architectural real-estate experience featuring interactive 3D residences, curated spaces, and private viewing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
