@@ -13,6 +13,7 @@ function CameraController({ targetPosition, isExploring, autoTour, onTourStepCha
   const mouse = useRef({ x: 0, y: 0 });
   const tourStepRef = useRef(0);
   const tourTimeRef = useRef(0);
+  const currentLookTarget = useRef(new THREE.Vector3(0, 1.2, 0));
 
   // Curated cinematic camera sequence for "WATCH FILM" / Auto-Tour
   const tourKeyframes = [
@@ -37,14 +38,15 @@ function CameraController({ targetPosition, isExploring, autoTour, onTourStepCha
 
     if (autoTour) {
       tourTimeRef.current += delta;
-      if (tourTimeRef.current > 7) {
+      if (tourTimeRef.current > 7.5) {
         tourTimeRef.current = 0;
         tourStepRef.current = (tourStepRef.current + 1) % tourKeyframes.length;
         if (onTourStepChange) onTourStepChange(tourKeyframes[tourStepRef.current].title);
       }
       const currentKf = tourKeyframes[tourStepRef.current];
-      cameraRef.current.position.lerp(new THREE.Vector3(...currentKf.pos), delta * 0.8);
-      state.camera.lookAt(new THREE.Vector3(...currentKf.target));
+      cameraRef.current.position.lerp(new THREE.Vector3(...currentKf.pos), delta * 0.9);
+      currentLookTarget.current.lerp(new THREE.Vector3(...currentKf.target), delta * 1.5);
+      state.camera.lookAt(currentLookTarget.current);
       return;
     }
 
@@ -65,14 +67,15 @@ function CameraController({ targetPosition, isExploring, autoTour, onTourStepCha
       ? new THREE.Vector3(...targetPosition)
       : new THREE.Vector3(0, 1.5, 0);
 
-    state.camera.lookAt(lookTarget);
+    currentLookTarget.current.lerp(lookTarget, delta * 2.0);
+    state.camera.lookAt(currentLookTarget.current);
   });
 
   return (
     <PerspectiveCamera
       ref={cameraRef}
       makeDefault
-      position={[0, 4.5, 17]}
+      position={[0, 3.8, 14.2]}
       fov={42}
       near={0.1}
       far={100}
@@ -138,12 +141,12 @@ export default function HeroCanvas({
   onToggleXRay = () => {},
   activeLevel = 'all',
   onChangeLevel = () => {},
-  autoTour = false,
+  autoTour = true,
   onToggleAutoTour = () => {}
 }) {
   const [activeHotspot, setActiveHotspot] = useState(null);
   const [isFreeExplore, setIsFreeExplore] = useState(false);
-  const [tourStepTitle, setTourStepTitle] = useState('Overview & Arrival');
+  const [tourStepTitle, setTourStepTitle] = useState('Overview & Architectural Arrival');
   const controlsRef = useRef();
 
   const handleSelectHotspot = (spot) => {

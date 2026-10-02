@@ -27,7 +27,7 @@ export default function Home({
   const [heroMood, setHeroMood] = useState('golden');
   const [heroXRay, setHeroXRay] = useState(false);
   const [heroLevel, setHeroLevel] = useState('all');
-  const [heroAutoTour, setHeroAutoTour] = useState(false);
+  const [heroAutoTour, setHeroAutoTour] = useState(true);
 
   // Discovery Mode state: 'editorial' | 'discovery' | 'map'
   const [viewMode, setViewMode] = useState('editorial');
