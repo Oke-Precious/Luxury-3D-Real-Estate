@@ -34,8 +34,8 @@ export default function Home({
   const [activeLocationFilter, setActiveLocationFilter] = useState('All');
   const [activeTypeFilter, setActiveTypeFilter] = useState('All');
 
-  // Featured flagship property
-  const azureProperty = PROPERTIES.find((p) => p.id === 'azure-residence') || PROPERTIES[0];
+  // Featured flagship property (The Aurelia Residence - Demonstration Architectural Digital Twin)
+  const aureliaProperty = PROPERTIES.find((p) => p.id === 'aurelia-residence' || p.id === 'azure-residence') || PROPERTIES[0];
   const oceanHouse = PROPERTIES.find((p) => p.id === 'ocean-house') || PROPERTIES[1];
 
   // Discovery Filtered items
@@ -85,7 +85,7 @@ export default function Home({
             <button
               onClick={() => {
                 audioSystem.playTransition();
-                onSelectProperty(azureProperty);
+                onSelectProperty(aureliaProperty);
               }}
               className="px-6 py-3.5 bg-[#F4F1EA] text-[#0E0F0F] text-xs uppercase tracking-widest font-semibold hover:bg-[#C5A880] transition-colors flex items-center gap-3 shadow-xl"
             >
@@ -199,11 +199,11 @@ export default function Home({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 pt-16">
             {/* 1. Large-format Featured Residence (Wide full-viewport rhythm) */}
             <PropertyCard
-              property={azureProperty}
+              property={aureliaProperty}
               layoutVariant="editorial-wide"
               currency={currency}
-              isSaved={isSaved(azureProperty.id)}
-              isCompared={isCompared(azureProperty.id)}
+              isSaved={isSaved(aureliaProperty.id)}
+              isCompared={isCompared(aureliaProperty.id)}
               onToggleSave={onToggleSave}
               onToggleCompare={onToggleCompare}
               onSelect={onSelectProperty}

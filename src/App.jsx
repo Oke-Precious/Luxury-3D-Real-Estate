@@ -4,7 +4,7 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import CustomCursor from './components/ui/CustomCursor';
 import Loader from './components/ui/Loader';
-import ResidenceExperience from './components/residence/ResidenceExperience';
+import InteractiveSpatialExperience from './components/experience/InteractiveSpatialExperience';
 import PrivateViewingDrawer from './components/modals/PrivateViewingDrawer';
 import SearchModal from './components/modals/SearchModal';
 import SavedDrawer from './components/modals/SavedDrawer';
@@ -181,9 +181,9 @@ export default function App() {
 
         {/* ----------------- MODALS & DRAWERS ----------------- */}
 
-        {/* Signature Experience: Fullscreen 3D Residence Experience */}
+        {/* Signature Experience: Fullscreen 3D Spatial Residence Experience */}
         {activeResidenceExperience && (
-          <ResidenceExperience
+          <InteractiveSpatialExperience
             property={activeResidenceExperience}
             currency={currency}
             isOpen={Boolean(activeResidenceExperience)}

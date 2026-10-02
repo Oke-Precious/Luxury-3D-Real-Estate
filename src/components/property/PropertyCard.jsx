@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bookmark, ArrowUpRight, Check, Eye } from 'lucide-react';
+import { Bookmark, ArrowUpRight, Check, Eye, Compass } from 'lucide-react';
 import { formatPrice } from '../../utils/formatCurrency';
 import { audioSystem } from '../../utils/audioSystem';
 
@@ -44,11 +44,17 @@ export default function PropertyCard({
           <div className="absolute inset-0 bg-gradient-to-t from-[#0E0F0F] via-transparent to-transparent opacity-60" />
 
           {/* Top Badges: Typology & Status */}
-          <div className="absolute top-4 left-4 flex items-center gap-2">
+          <div className="absolute top-4 left-4 flex flex-wrap items-center gap-2">
             <span className="px-2.5 py-1 bg-[#0E0F0F]/85 backdrop-blur-md text-[10px] font-mono tracking-widest text-[#C5A880] uppercase border border-white/10">
               {property.type}
             </span>
-            {property.featured && (
+            {property.spatialAvailable && (
+              <span className="px-2.5 py-1 bg-[#14181B]/95 backdrop-blur-md text-[#C5A880] border border-[#C5A880]/50 text-[10px] font-mono tracking-widest uppercase flex items-center gap-1.5 shadow-lg">
+                <Compass size={11} className="text-[#C5A880]" />
+                3D SPATIAL EXPLORATION
+              </span>
+            )}
+            {property.featured && !property.spatialAvailable && (
               <span className="px-2.5 py-1 bg-[#C5A880] text-[#0E0F0F] text-[10px] font-mono tracking-widest font-semibold uppercase">
                 Featured
               </span>

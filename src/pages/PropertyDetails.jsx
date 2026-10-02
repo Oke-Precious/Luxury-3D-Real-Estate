@@ -77,9 +77,16 @@ export default function PropertyDetails({
 
         {/* Hero Editorial Titles */}
         <div className="relative z-10 max-w-4xl">
-          <span className="text-[10px] font-mono tracking-[0.3em] uppercase text-[#C5A880] block mb-2">
-            {property.district} · {property.city}
-          </span>
+          <div className="flex flex-wrap items-center gap-3 mb-3">
+            <span className="text-[10px] font-mono tracking-[0.3em] uppercase text-[#C5A880] block">
+              {property.district} · {property.city}
+            </span>
+            {property.spatialAvailable && (
+              <span className="px-2.5 py-0.5 bg-[#14181B]/95 text-[#C5A880] border border-[#C5A880]/50 text-[10px] font-mono tracking-widest uppercase">
+                3D Connected Spatial Model Active
+              </span>
+            )}
+          </div>
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif text-white tracking-tight leading-[0.95] mb-4">
             {property.title}
           </h1>
@@ -96,7 +103,7 @@ export default function PropertyDetails({
               className="px-6 py-3.5 bg-[#F4F1EA] text-[#0E0F0F] text-xs uppercase tracking-widest font-semibold hover:bg-[#C5A880] transition-colors flex items-center gap-3"
             >
               <Eye size={15} />
-              <span>Enter The Residence</span>
+              <span>{property.spatialAvailable ? 'Enter Spatial Residence' : 'Enter The Residence'}</span>
             </button>
 
             <button

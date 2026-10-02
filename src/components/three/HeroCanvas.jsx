@@ -16,11 +16,11 @@ function CameraController({ targetPosition, isExploring, autoTour, onTourStepCha
 
   // Curated cinematic camera sequence for "WATCH FILM" / Auto-Tour
   const tourKeyframes = [
-    { pos: [0, 4, 15], target: [0, 1.5, 0], title: 'Overview & Arrival' },
-    { pos: [7, 2.5, 9], target: [1.8, 1.2, 1], title: 'Living Pavilion & Reflection Court' },
-    { pos: [2, 0.8, 6.5], target: [0, 0.2, 3.8], title: 'Basalt Infinity Lap Margin' },
-    { pos: [-5, 4.5, 8], target: [-2.4, 3.8, 1], title: 'Cantilevered Primary Sky Suite' },
-    { pos: [6, 1.2, 4], target: [3.8, 0.5, 1.5], title: 'Sunken Fire Pit & Lagoon Terrace' }
+    { pos: [0, 3.8, 14.2], target: [0, 1.2, 0], title: 'Overview & Architectural Arrival' },
+    { pos: [4.8, 2.0, 5.5], target: [1.8, 1.0, 1.6], title: 'Modular Living Salon & Suspended Hearth' },
+    { pos: [5.6, 2.2, 2.0], target: [3.6, 1.1, -0.4], title: 'Waterfall Marble Kitchen & Barstools' },
+    { pos: [4.2, 1.2, 5.2], target: [2.5, 0.4, 3.5], title: 'Sunken Fire Pit & Basalt Infinity Weir' },
+    { pos: [-4.6, 4.2, 5.8], target: [-2.4, 3.4, 1.0], title: 'Cantilevered Primary Suite & Walnut Acoustic Wall' }
   ];
 
   useEffect(() => {

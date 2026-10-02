@@ -5,11 +5,15 @@
 
 export const PROPERTIES = [
   {
-    id: "azure-residence",
-    slug: "azure-residence",
-    title: "The Azure Residence",
-    tagline: "Cantilevered Waterfront Sanctuary",
-    subtitle: "A monolithic harmony of board-formed concrete, travertine, and boundless lagoon horizons.",
+    id: "aurelia-residence",
+    slug: "aurelia-residence",
+    title: "The Aurelia Residence",
+    tagline: "Cantilevered Waterfront Sanctuary · Demonstration Digital Twin",
+    subtitle: "A monolithic harmony of board-formed concrete, travertine, and boundless lagoon horizons. Featured demonstration digital twin with connected room exploration.",
+    isDemonstrationContent: true,
+    isSpatialDemo: true,
+    spatialAvailable: true,
+    futureModelPath: "/models/properties/aurelia/residence.glb",
     location: "Ikoyi",
     district: "Old Ikoyi Waterfront",
     city: "Lagos",
@@ -27,7 +31,7 @@ export const PROPERTIES = [
     yearBuilt: 2024,
     architect: "Studio Monolith & Kéré Collaboratives",
     featured: true,
-    status: "Private Portfolio",
+    status: "Demonstration Architectural Twin",
     lifestyle: ["Waterfront Living", "Architectural Homes", "Private Estates"],
     heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85",
     gallery: [
